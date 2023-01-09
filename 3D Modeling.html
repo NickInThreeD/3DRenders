@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NickIn3D</title>
+        
+        <link rel="stylesheet" href="CSS/Top Panel.css">
+        <link rel="stylesheet" href="CSS/Image Viewer.css">
+				<link rel="stylesheet" href="CSS/DropDownMenu.css">
+				<link rel="stylesheet" href="CSS/General.css">
+
+    </head>
+    <body class="Body">
+
+        <div class="top-panel">
+
+					<div class="BurgerMenu">
+						<p class="Stack">burger menu</p>
+					</div>
+
+					
+            <div class="NickIn3D">
+               
+							NickIn3D
+							
+							
+
+							<button name="DDB" id="1" class="DropDownButton" onclick="ShowDropDownMenu()">burger menu</button>
+						
+							<div class="DropDownMenu">
+
+								<div class="DDMgrid">
+									<button class="CharacterButton" onclick="ShowCharacters()">Characters</button>
+									<button class="Diorama" onclick="ShowDioramas()">Dioramas</button>
+								</div>
+								
+								
+							</div>
+
+            </div>
+        </div>
+
+        <div class="main-image-body">
+
+						<div class="ExternalWebsites">
+							<button onclick="AnyLink(YoutubeLink)">YT</button>
+							<button onclick="AnyLink(InstaLink)">Insta</button>
+						</div>
+						
+						
+						<div class="Diorama-Page">
+							<div id="Dioramas" class="image-container-Dioramas">
+								<div>
+										<img class="DioramaSylvanian" src="Images/Untitled36_20220823193557.png">
+										<div class="Titles">
+											Sylvanian Families House
+										</div>
+									</div>
+
+									<div>
+										<img class="LivingRoom" src="Images/Tiny Living Room.png">
+										<div class="Titles">
+										Tiny Living Room
+										</div>
+									</div>
+
+									<div>
+										<img class="OldA" src="Images/Old apartment with background.png">
+										<div class="Titles">
+											Old Apartment
+										</div>
+									</div>
+
+									<div>
+										<img class="PetShop" src="Images/Pet shop (edit).png">
+										<div class="Titles">
+											Pet Shop
+										</div>
+									</div>
+								</div>
+						</div>
+						
+
+            <div class="image-container-Characters">
+							<div>
+								<img class="Plankton" src="Images/Plankton.png">
+								<div class="Titles">
+									Plankton
+								</div>
+							</div>
+
+							<div>
+								<img class="Jin" src="Images/Jin.png">
+								<div class="Titles">
+									Jin Kazama
+								</div>
+							</div>
+
+							<div>
+								<img class="BuzzL" src="Images/Buzz lightyear.png">
+								<div class="Titles">
+									Buzz Lightyear
+								</div>
+							</div>
+
+							<div>
+								<img class="Pumpkin" src="Images/Untitled1_20221031104540.png">
+								<div class="Titles">
+									No-face Pumpkin
+								</div>
+							</div>	
+            </div>
+
+						<script>
+							let YoutubeLink = "https://www.youtube.com/";
+							let InstaLink = "https://www.instagram.com/";
+
+							function ShowDropDownMenu()
+							{
+								var id=document.getElementsByName("DDB")[0].id;
+								if(id==1)
+								{
+									document.querySelector('.DropDownMenu').style.opacity = 1;
+									document.getElementsByName("DDB")[0].id=0;
+								}
+								else
+								{
+									document.querySelector('.DropDownMenu').style.opacity = 0;
+									document.getElementsByName("DDB")[0].id=1;
+								}
+							}
+
+							function AnyLink(Link)
+							{
+								window.location = Link;
+							}
+
+							function ShowCharacters()
+							{
+								document.querySelector('.image-container-Characters').style.opacity = 1;
+								document.querySelector('.Diorama-Page').style.opacity = 0; //disable the page once functionality is added (zoom/full screen)
+							}
+
+							function ShowDioramas()
+							{
+								document.querySelector('.image-container-Characters').style.opacity = 0; //disable the page once functionality is added (zoom/full screen)
+								document.querySelector('.Diorama-Page').style.opacity = 1;
+							}
+
+						</script>
+
+        </div>
+		</body>
+</html>
+    

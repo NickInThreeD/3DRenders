@@ -1,0 +1,63 @@
+.Body
+{
+    padding-top: 150px;
+    padding-left: 150px;
+    padding-right: 150px;
+    height: 3000px;
+}
+
+.top-panel
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100px;
+    background-color: lightblue;
+    z-index: 100;
+}
+
+.NickIn3D
+{
+    padding-top: 18px;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    font-weight:400;
+    justify-content: center;
+    justify-items: center;
+}
+
+.DropDownButton
+{
+    position: absolute;
+    right: 20px;
+    top: 32px;
+    opacity: 0;
+    width: 82px;
+}
+
+.BurgerMenu
+{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    
+   
+    
+}
+
+.Stack
+{
+    padding-top: 10px;
+    color: white;
+    border-radius: 5px;
+    background-color: white;
+    
+}
+
+
+
