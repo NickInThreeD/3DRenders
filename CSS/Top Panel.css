@@ -1,11 +1,3 @@
-.Body
-{
-    padding-top: 150px;
-    padding-left: 150px;
-    padding-right: 150px;
-    height: 3000px;
-}
-
 .top-panel
 {
     display: flex;
@@ -17,7 +9,7 @@
     right: 0px;
     height: 100px;
     background-color: lightblue;
-    z-index: 100;
+    z-index: 200;
 }
 
 .NickIn3D
@@ -34,29 +26,40 @@
 .DropDownButton
 {
     position: absolute;
-    right: 20px;
-    top: 32px;
+    right: 41px;
+    top: 20px;
     opacity: 0;
-    width: 82px;
+    width: 55px;
+    height: 50px;
+    cursor: pointer;
 }
 
 .BurgerMenu
 {
     position: absolute;
     right: 20px;
-    top: 20px;
-    
-   
-    
+    top: 23px;
+
+}
+
+.Menu
+{
+    width: 70px;
+    height: 40px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 5px;
 }
 
 .Stack
 {
-    padding-top: 10px;
+    height: 12px;
+    width: 46px;
     color: white;
-    border-radius: 5px;
+    border-radius: 2px;
     background-color: white;
-    
+    border-color: transparent;
+    pointer-events: none;
 }
 
 
