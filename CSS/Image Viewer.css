@@ -1,7 +1,7 @@
 .Diorama-Page
-{
+{   
+    margin-top: 150px;
    position: relative;
-   opacity: 0;
 }
 
 .image-container-Characters
@@ -10,18 +10,15 @@
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 40px;
     row-gap: 80px;
-    opacity: 0;
 }
 
 .image-container-Dioramas
 {
-    
     position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 40px;
     row-gap: 80px;
-  
 }
 
 .DioramaSylvanian, .Plankton, .PetShop, .Jin, .BuzzL, .Pumpkin, .LivingRoom, .OldA
@@ -47,3 +44,7 @@ img
     color: rgb(88, 88, 88);
 }
 
+.Enlarge-btn
+{
+    position: absolute;
+}
