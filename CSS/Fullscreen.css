@@ -1,0 +1,41 @@
+
+
+.image-Container
+{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.fullScreen
+{
+  background-color: rgb(221, 221, 221);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  position: fixed;
+  z-index: 100;
+  left: 0px;
+  right: 0px;
+}
+
+.fullScreenRender
+{
+  position: fixed;
+  top: 100px;
+  z-index: 101;
+  height: 550px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.CloseModalButton
+{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 102;
+  height: 50px;
+  width: 50px;
+
+}
