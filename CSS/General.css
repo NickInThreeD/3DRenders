@@ -1,4 +1,15 @@
+.Body
+{
+    height: 3000px;
+}
+
 .ExternalWebsites
 {
     opacity: 0;
+}
+
+.hide
+{
+    display: none;
+    pointer-events: none;
 }
