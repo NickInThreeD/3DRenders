@@ -7,40 +7,53 @@
         <link rel="stylesheet" href="CSS/Image Viewer.css">
 				<link rel="stylesheet" href="CSS/DropDownMenu.css">
 				<link rel="stylesheet" href="CSS/General.css">
+				<link rel="stylesheet" href="CSS/Fullscreen.css">
+
 
     </head>
     <body class="Body">
 
-        <div class="top-panel">
+				<div class="Modal-Like">
+					<div id="modalBg" class="fullScreen"></div>
 
-					<div class="BurgerMenu">
-						<p class="Stack">burger menu</p>
+					<div class="image-Container">
+						<img id="SylvanianHouse" class="fullScreenRender hide" src="Images/Untitled36_20220823193557.png">		
+						<img id="TinyLivingRoom" class="fullScreenRender hide" src="Images/Tiny Living Room.png">
+						<img id="OldApartment" class="fullScreenRender hide" src="Images/Old apartment with background.png">
+						<img id="PetShop" class="fullScreenRender hide" src="Images/Pet shop (edit).png">
+
+						<img id="Plankton" class="fullScreenRender hide" src="Images/Plankton.png">
+						<img id="Jin" class="fullScreenRender hide" src="Images/Jin.png">
+						<img id="Buzz" class="fullScreenRender hide" src="Images/Buzz lightyear.png">
+						<img id="NoFace" class="fullScreenRender hide" src="Images/Untitled1_20221031104540.png">
+
 					</div>
+					<button id="ModalCloseBtn" onclick="CloseModalLike()" class="CloseModalButton hide">Close</button>
+				</div>
 
+
+        <div class="top-panel">
+					<div class="BurgerMenu">
+						<div class="Menu">
+							<button class="Stack"></button>
+							<button class="Stack"></button>
+							<button class="Stack"></button>
+						</div>
+					</div>
 					
-            <div class="NickIn3D">
-               
+					<div class="NickIn3D">
 							NickIn3D
-							
-							
-
-							<button name="DDB" id="1" class="DropDownButton" onclick="ShowDropDownMenu()">burger menu</button>
-						
-							<div class="DropDownMenu">
-
+							<button name="DDB" id="1" class="DropDownButton" onclick="ShowDropDownMenu()"></button>
+							<div id="DDM" class="DropDownMenu">
 								<div class="DDMgrid">
-									<button class="CharacterButton" onclick="ShowCharacters()">Characters</button>
-									<button class="Diorama" onclick="ShowDioramas()">Dioramas</button>
+									<a id="charactersShower" class="CharacterButton DDMbtn hideDDMShowers" onclick="ShowPanel('charactersPanel')" href="#">Characters</a>
+									<a id="dioramaShower" class="Diorama DDMbtn hideDDMShowers" onclick="ShowPanel('dioramaPanel')" href="#">Dioramas</a>
 								</div>
-								
-								
 							</div>
-
             </div>
         </div>
 
         <div class="main-image-body">
-
 						<div class="ExternalWebsites">
 							<button onclick="AnyLink(YoutubeLink)">YT</button>
 							<button onclick="AnyLink(InstaLink)">Insta</button>
@@ -48,30 +61,30 @@
 						
 						
 						<div class="Diorama-Page">
-							<div id="Dioramas" class="image-container-Dioramas">
+							<div id="dioramaPanel" class="image-container-Dioramas panel hide">
 								<div>
-										<img class="DioramaSylvanian" src="Images/Untitled36_20220823193557.png">
+										<img onclick="ShowModalLike('SylvanianHouse')" class="DioramaSylvanian" src="Images/Untitled36_20220823193557.png">
 										<div class="Titles">
 											Sylvanian Families House
 										</div>
 									</div>
 
 									<div>
-										<img class="LivingRoom" src="Images/Tiny Living Room.png">
+										<img onclick="ShowModalLike('TinyLivingRoom')" class="LivingRoom" src="Images/Tiny Living Room.png">
 										<div class="Titles">
 										Tiny Living Room
 										</div>
 									</div>
 
 									<div>
-										<img class="OldA" src="Images/Old apartment with background.png">
+										<img onclick="ShowModalLike('OldApartment')" class="OldA" src="Images/Old apartment with background.png">
 										<div class="Titles">
 											Old Apartment
 										</div>
 									</div>
 
 									<div>
-										<img class="PetShop" src="Images/Pet shop (edit).png">
+										<img onclick="ShowModalLike('PetShop')" class="PetShop" src="Images/Pet shop (edit).png">
 										<div class="Titles">
 											Pet Shop
 										</div>
@@ -80,30 +93,30 @@
 						</div>
 						
 
-            <div class="image-container-Characters">
+            <div id="charactersPanel" class="image-container-Characters panel hide">
 							<div>
-								<img class="Plankton" src="Images/Plankton.png">
+								<img onclick="ShowModalLike('Plankton')" class="Plankton" src="Images/Plankton.png">
 								<div class="Titles">
 									Plankton
 								</div>
 							</div>
 
 							<div>
-								<img class="Jin" src="Images/Jin.png">
+								<img onclick="ShowModalLike('Jin')" class="Jin" src="Images/Jin.png">
 								<div class="Titles">
 									Jin Kazama
 								</div>
 							</div>
 
 							<div>
-								<img class="BuzzL" src="Images/Buzz lightyear.png">
+								<img onclick="ShowModalLike('Buzz')" class="BuzzL" src="Images/Buzz lightyear.png">
 								<div class="Titles">
 									Buzz Lightyear
 								</div>
 							</div>
 
 							<div>
-								<img class="Pumpkin" src="Images/Untitled1_20221031104540.png">
+								<img onclick="ShowModalLike('NoFace')" class="Pumpkin" src="Images/Untitled1_20221031104540.png">
 								<div class="Titles">
 									No-face Pumpkin
 								</div>
@@ -117,15 +130,18 @@
 							function ShowDropDownMenu()
 							{
 								var id=document.getElementsByName("DDB")[0].id;
+								const DDMOptions = document.querySelectorAll('.DDMbtn');
 								if(id==1)
 								{
 									document.querySelector('.DropDownMenu').style.opacity = 1;
 									document.getElementsByName("DDB")[0].id=0;
+									DDMOptions.forEach((DDMbtn) => DDMbtn.classList.remove('hideDDMShowers'));
 								}
 								else
 								{
 									document.querySelector('.DropDownMenu').style.opacity = 0;
 									document.getElementsByName("DDB")[0].id=1;
+									DDMOptions.forEach((DDMbtn) => DDMbtn.classList.add('hideDDMShowers'));
 								}
 							}
 
@@ -134,16 +150,30 @@
 								window.location = Link;
 							}
 
-							function ShowCharacters()
+							function ShowPanel(panelId)
 							{
-								document.querySelector('.image-container-Characters').style.opacity = 1;
-								document.querySelector('.Diorama-Page').style.opacity = 0; //disable the page once functionality is added (zoom/full screen)
+								const allPanels = document.querySelectorAll('.panel');
+								allPanels.forEach((panel) => panel.classList.add('hide'));
+								document.getElementById(panelId).classList.remove('hide');
 							}
 
-							function ShowDioramas()
+							function ShowModalLike(imageId)
 							{
-								document.querySelector('.image-container-Characters').style.opacity = 0; //disable the page once functionality is added (zoom/full screen)
-								document.querySelector('.Diorama-Page').style.opacity = 1;
+								let allImages = document.querySelectorAll('.fullScreenRender');
+								allImages.forEach((fullScreenRender) => fullScreenRender.classList.add('hide'));
+								document.getElementById(imageId).classList.remove('hide');
+								document.getElementById('modalBg').style.opacity = 0.6;
+								document.getElementById('ModalCloseBtn').classList.remove('hide');
+								document.getElementById('DDM').classList.add('hide');
+							}
+
+							function CloseModalLike()
+							{
+								let allImages = document.querySelectorAll('.fullScreenRender');
+								allImages.forEach((fullScreenRender) => fullScreenRender.classList.add('hide'));
+								document.getElementById('modalBg').style.opacity = 0;
+								document.getElementById('ModalCloseBtn').classList.add('hide');
+								document.getElementById('DDM').classList.remove('hide');
 							}
 
 						</script>
